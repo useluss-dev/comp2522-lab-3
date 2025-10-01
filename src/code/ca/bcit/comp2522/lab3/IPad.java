@@ -22,19 +22,20 @@ import java.util.Objects;
 public class IPad extends IDevice
 {
     private boolean hasCase;
-    private String operatingSystemVersion;
+    private String  operatingSystemVersion;
 
     /**
      * Constructs a new {@code IPad} instance with the specified case status
      * and operating system version.
      *
-     * @param hasCase                 {@code true} if the iPad has a protective case; {@code false} otherwise
-     * @param operatingSystemVersion  the version of the operating system installed
+     * @param hasCase                {@code true} if the iPad has a protective case; {@code false} otherwise
+     * @param operatingSystemVersion the version of the operating system installed
      */
-    public IPad(final boolean hasCase, final String operatingSystemVersion)
+    public IPad(final boolean hasCase,
+                final String operatingSystemVersion)
     {
         super("learning");
-        this.hasCase = hasCase;
+        this.hasCase                = hasCase;
         this.operatingSystemVersion = operatingSystemVersion;
     }
 
@@ -115,21 +116,25 @@ public class IPad extends IDevice
      *
      * @param obj the object to compare with this iPad
      * @return {@code true} if both objects are {@code IPad} instances with the same operating system version;
-     *         {@code false} otherwise
+     * {@code false} otherwise
      */
     @Override
     public boolean equals(final Object obj)
     {
+        final IPad ipad;
+
         if (this == obj)
         {
             return true;
         }
+
         if (obj == null || getClass() != obj.getClass())
         {
             return false;
         }
-        final IPad ipad;
+
         ipad = (IPad) obj;
+
         return Objects.equals(operatingSystemVersion, ipad.operatingSystemVersion);
     }
 

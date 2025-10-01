@@ -23,23 +23,25 @@ import java.util.Objects;
 public class IPhone16 extends IPhone
 {
     private boolean highResolutionCamera;
-    private int gigabytesOfMemory;
+    private int     gigabytesOfMemory;
 
     /**
      * Constructs a new {@code IPhone16} instance with the specified minutes remaining,
      * carrier, camera capabilities, and memory size.
      *
-     * @param minutesRemaining      the number of minutes remaining on the phone plan
-     * @param carrier               the name of the carrier service provider
-     * @param highResolutionCamera  {@code true} if the device has a high-resolution camera; {@code false} otherwise
-     * @param gigabytesOfMemory     the amount of memory in gigabytes
+     * @param minutesRemaining     the number of minutes remaining on the phone plan
+     * @param carrier              the name of the carrier service provider
+     * @param highResolutionCamera {@code true} if the device has a high-resolution camera; {@code false} otherwise
+     * @param gigabytesOfMemory    the amount of memory in gigabytes
      */
-    public IPhone16(final double minutesRemaining, final String carrier,
-                    final boolean highResolutionCamera, final int gigabytesOfMemory)
+    public IPhone16(final double minutesRemaining,
+                    final String carrier,
+                    final boolean highResolutionCamera,
+                    final int gigabytesOfMemory)
     {
         super(minutesRemaining, carrier);
         this.highResolutionCamera = highResolutionCamera;
-        this.gigabytesOfMemory = gigabytesOfMemory;
+        this.gigabytesOfMemory    = gigabytesOfMemory;
     }
 
     /**
@@ -119,20 +121,22 @@ public class IPhone16 extends IPhone
      *
      * @param obj the object to compare with this iPhone 16
      * @return {@code true} if both objects are {@code IPhone16} instances with the same
-     *         minutes remaining and camera resolution; {@code false} otherwise
+     * minutes remaining and camera resolution; {@code false} otherwise
      */
     @Override
     public boolean equals(final Object obj)
     {
+        final IPhone16 iphone16;
+
         if (this == obj)
         {
             return true;
         }
+
         if (obj == null || getClass() != obj.getClass())
         {
             return false;
         }
-        final IPhone16 iphone16;
         iphone16 = (IPhone16) obj;
 
         return iphone16.getMinutesRemaining() == getMinutesRemaining() &&

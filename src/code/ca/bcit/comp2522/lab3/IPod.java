@@ -89,19 +89,19 @@ public class IPod extends IDevice
      * {@code false} otherwise
      */
     @Override
-    public boolean equals(final Object o)
+    public boolean equals(final Object obj)
     {
-        if (this == o)
+        if (this == obj)
         {
             return true;
         }
 
-        if (!(o instanceof IPod))
+        if (obj == null || getClass() != obj.getClass())
         {
             return false;
         }
 
-        IPod ipod = (IPod) o;
+        IPod ipod = (IPod) obj;
 
         return this.numStoredSongs == ipod.numStoredSongs;
     }

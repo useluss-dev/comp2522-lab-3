@@ -37,7 +37,7 @@ public class IPhone extends IDevice
     {
         super("talking");
         this.minutesRemaining = minutesRemaining;
-        this.carrier = carrier;
+        this.carrier          = carrier;
     }
 
     /**
@@ -117,21 +117,25 @@ public class IPhone extends IDevice
      *
      * @param obj the object to compare with this iPhone
      * @return {@code true} if both objects are {@code IPhone} instances with the same minutes remaining;
-     *         {@code false} otherwise
+     * {@code false} otherwise
      */
     @Override
     public boolean equals(final Object obj)
     {
+        final IPhone iphone;
+
         if (this == obj)
         {
             return true;
         }
+
         if (obj == null || getClass() != obj.getClass())
         {
             return false;
         }
-        final IPhone iphone;
+
         iphone = (IPhone) obj;
+
         return iphone.minutesRemaining == minutesRemaining;
     }
 
